@@ -1,0 +1,30 @@
+package com.vtys.medpadd.entity;
+
+import java.util.UUID;
+
+import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
+@Entity
+@Table(name = "ratings")
+@AllArgsConstructor
+@NoArgsConstructor
+public class Rating extends BaseEntity {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID id;
+
+    @Column
+    private Double rating;
+
+    @ManyToOne// her bir rating bir kullanıcıya aittir
+    @JoinColumn(name = "user_id", referencedColumnName = "id")
+    private Users user;
+
+    @ManyToOne// her bir rating bir içeriğe aittir
+    @JoinColumn(name = "content_id", referencedColumnName = "id")
+    private Content content;
+
+}

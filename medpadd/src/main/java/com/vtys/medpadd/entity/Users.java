@@ -9,7 +9,6 @@ import lombok.NoArgsConstructor;
 import java.time.LocalDate;
 import java.util.UUID;
 
-
 @Entity
 @Table(name = "users")
 @NoArgsConstructor
@@ -37,6 +36,13 @@ public class Users extends BaseEntity {
 
     @Column(nullable = false)
     private String password;
+
+    @ManyToOne
+    @JoinColumn(
+            name = "role_id",
+            referencedColumnName = "id"
+    )
+    private SystemRoles systemRoles;
 
     @Column
     private LocalDate birthday;

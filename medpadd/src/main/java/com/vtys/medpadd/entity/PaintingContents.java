@@ -1,16 +1,16 @@
 package com.vtys.medpadd.entity;
 
-import java.util.UUID;
 import jakarta.persistence.*;
 import lombok.*;
+import java.util.UUID;
 
 @Entity
-@Table(name = "comments")
+@Table(name = "painting_contents")
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
 @EqualsAndHashCode(callSuper = true)
-public class Comments extends BaseEntity {
+public class PaintingContents extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
@@ -21,9 +21,12 @@ public class Comments extends BaseEntity {
     private Content content;
 
     @ManyToOne
-    @JoinColumn(name = "user_id", referencedColumnName = "id")
-    private Users user;
+    @JoinColumn(name = "image_id", referencedColumnName = "id")
+    private Media image;
+
+    @Column
+    private String style;
 
     @Column(columnDefinition = "TEXT")
-    private String text;
+    private String description;
 }

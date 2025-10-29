@@ -2,16 +2,17 @@ package com.vtys.medpadd.entity;
 
 import java.util.*;
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 
 
 @Entity
-@Table(name = "systemroles")
+@Table(name = "system_roles")
 @NoArgsConstructor
 @AllArgsConstructor
-public class System_roles extends BaseEntity {
+@Data
+@EqualsAndHashCode(callSuper = true)
+public class SystemRoles extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)

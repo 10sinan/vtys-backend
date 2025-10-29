@@ -1,7 +1,10 @@
 package com.vtys.medpadd.entity;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
 import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 import java.time.LocalDate;
 import java.util.UUID;
@@ -11,6 +14,8 @@ import java.util.UUID;
 @Table(name = "users")
 @NoArgsConstructor
 @AllArgsConstructor
+@Data
+@EqualsAndHashCode(callSuper = true)
 public class Users extends BaseEntity {
 
     @Id
@@ -24,24 +29,19 @@ public class Users extends BaseEntity {
     private String lastName;
 
     @Column(nullable = false, unique = true)
+    private String username;
+
+    @Column(nullable = false, unique = true)
+    @Email
     private String email;
 
     @Column(nullable = false)
     private String password;
 
-    @Column(nullable = false)
-    private String username;
-
     @Column
-    private LocalDate birthDay;
+    private LocalDate birthday;
 
-
-    @ManyToOne // her kullanıcı bir role sahip olabilir
-    @JoinColumn(name = "role_id", referencedColumnName = "id")
-    private System_roles role;
-
-    @OneToOne // her kullanıcının bir profil resmi olabilir
-    @JoinColumn(name = "media_id", referencedColumnName = "id")
-    private Media profile_pic_id;
-
+    @OneToOne
+    @JoinColumn(name = "profiler_pic_id", referencedColumnName = "id")
+    private Media profilerPic;
 }

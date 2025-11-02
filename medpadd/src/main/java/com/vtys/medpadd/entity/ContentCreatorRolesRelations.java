@@ -5,7 +5,7 @@ import lombok.*;
 import java.util.UUID;
 
 @Entity
-@Table(name = "badges")
+@Table(name = "content_creator_roles_relations")
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
@@ -18,7 +18,7 @@ public class ContentCreatorRolesRelations extends BaseEntity {
 
 
     @ManyToOne
-    @JoinColumn(name = "content_creator_roles_id", referencedColumnName = "id")
+    @JoinColumn(name = "role_id", referencedColumnName = "id")
     private ContentCreatorRoles contentCreatorsRoles;
 
     @ManyToOne

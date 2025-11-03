@@ -1,7 +1,11 @@
 package com.vtys.medpadd.entity;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
+
 import java.util.UUID;
 
 @Entity
@@ -17,7 +21,8 @@ public class Badges extends BaseEntity {
     private UUID id;
 
     @ManyToOne
-    @JoinColumn(name = "icon_id", referencedColumnName = "id")// bu alani Media entity'sinden aliyor cunku orada medya dosyalari tutuluyor
+    @JoinColumn(name = "icon_id", referencedColumnName = "id")
+// bu alani Media entity'sinden aliyor cunku orada medya dosyalari tutuluyor
     private Media icon;
 
     @Column

@@ -2,7 +2,6 @@ package com.vtys.medpadd.dto.subscriptions;
 
 import com.vtys.medpadd.dto.media.DtoMedia;
 
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.UUID;

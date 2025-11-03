@@ -10,13 +10,13 @@ import java.util.UUID;
     Geri döndüreceği veriler bunlar.
  */
 public record DtoBadge(
-            UUID id,
-            DtoMedia icon,
-            String color,
-            String code,
-            String name,
-            String description,
-            LocalDateTime createdAt,
-            LocalDateTime updatedAt
+        UUID id,
+        DtoMedia icon,
+        String color,
+        String code,
+        String name,
+        String description,
+        LocalDateTime createdAt,
+        LocalDateTime updatedAt
 ) {
 }

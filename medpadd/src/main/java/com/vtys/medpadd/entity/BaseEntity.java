@@ -28,6 +28,7 @@ public abstract class BaseEntity {
     }
 
     public static class EntityListener {// bu sınıf JPA olaylarını dinlemek için kullanılır
+
         @PrePersist
         public void prePersist(BaseEntity entity) {
             entity.prePersist();

@@ -1,7 +1,9 @@
 package com.vtys.medpadd.entity;
 
 import jakarta.persistence.*;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
+
 import java.util.UUID;
 
 @Entity

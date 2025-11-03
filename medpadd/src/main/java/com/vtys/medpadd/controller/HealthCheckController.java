@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/health-check")
 public class HealthCheckController {
     @GetMapping("")
-    public boolean healthCheck(){
+    public boolean healthCheck() {
         return true;
     }
 }

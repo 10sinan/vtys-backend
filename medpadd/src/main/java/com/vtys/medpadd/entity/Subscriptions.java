@@ -2,6 +2,8 @@ package com.vtys.medpadd.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.List;
 import java.util.UUID;
 
 @Entity
@@ -27,5 +29,5 @@ public class Subscriptions extends BaseEntity {
     private String description;
 
     @Column(columnDefinition = "TEXT")
-    private String privileges;
+    private List<String> privileges;
 }

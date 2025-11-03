@@ -48,6 +48,6 @@ public class Users extends BaseEntity {
     private LocalDate birthday;
 
     @OneToOne
-    @JoinColumn(name = "profiler_pic_id", referencedColumnName = "id")
-    private Media profilerPic;
+    @JoinColumn(name = "profile_pic_id", referencedColumnName = "id")
+    private Media profilePic;
 }

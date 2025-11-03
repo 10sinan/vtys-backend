@@ -24,10 +24,10 @@ public class Complaints extends BaseEntity {
     @JoinColumn(name = "media_id", referencedColumnName = "id")
     private Media media;
 
-    /*
+    //bu değerin doğruluğunu değer atarken kontrol edeceğiz
+    //targetType'dan ne olduğunu bileceğiz.
     @Column(name = "target_id")
     private UUID targetId;
-    */
 
     @Column(name = "target_type")
     private String targetType;

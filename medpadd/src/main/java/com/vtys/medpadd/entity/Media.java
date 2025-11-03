@@ -25,11 +25,11 @@ public class Media extends BaseEntity {
     private Users user;
 
     @Column
-    private String media_url;
+    private String mediaUrl;
 
     @Column
-    private String media_type;
+    private String mediaType;
 
     @Column
-    private String media_size;
+    private String mediaSize;
 }
